@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
       service,
       message,
     });
-/*
+
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
@@ -29,7 +29,7 @@ router.post("/", async (req, res) => {
         <p>${message}</p>
       `,
     });
-    */
+    
 
     res.status(201).json({
       success: true,
