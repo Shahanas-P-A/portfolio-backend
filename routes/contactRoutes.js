@@ -1,6 +1,7 @@
 import express from "express";
 import Contact from "../models/contact.js";
 import transporter from "../config/mailer.js";
+const router = express.Router();
 
 router.post("/", async (req, res) => {
   try {
