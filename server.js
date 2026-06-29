@@ -7,7 +7,9 @@ dotenv.config();
 
 // Connect to MongoDB
 connectDB();
-
+setTimeout(() => {
+  console.log("DATABASE:", mongoose.connection.name);
+}, 3000);
 const app = express();
 
 // Middleware
