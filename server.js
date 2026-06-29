@@ -4,9 +4,7 @@ import cors from "cors";
 import connectDB from "./config/db.js";
 import contactRoutes from "./routes/contactRoutes.js";
 dotenv.config();
-console.log("EMAIL_USER:", process.env.EMAIL_USER);
-console.log("EMAIL_PASS:", process.env.EMAIL_PASS);
-console.log(process.env.MONGO_URI);
+
 // Connect to MongoDB
 connectDB();
 
