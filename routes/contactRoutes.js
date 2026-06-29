@@ -2,10 +2,10 @@ import express from "express";
 import Contact from "../models/contact.js";
 import transporter from "../config/mailer.js";
 
-const router = express.Router();
-
 router.post("/", async (req, res) => {
   try {
+    console.log("Incoming request:", req.body);
+
     const { name, email, service, message } = req.body;
 
     const contact = await Contact.create({
@@ -14,6 +14,10 @@ router.post("/", async (req, res) => {
       service,
       message,
     });
+
+    console.log("Saved to MongoDB:", contact);
+
+    
 
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
